@@ -1,9 +1,8 @@
 import { Router } from "express";
+import { pingController } from "../../controllers/ping.controller.js";
 
 const pingRouter = Router();
 
-pingRouter.get("/", (req, res) => {
-  res.status(200).send("pong");
-});
+pingRouter.get("/", pingController);
 
 export default pingRouter;

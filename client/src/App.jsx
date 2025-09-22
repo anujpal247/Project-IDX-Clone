@@ -1,12 +1,17 @@
+import { useState } from 'react';
 import './App.css'
+import Ping from './components/atoms/Ping.jsx';
 
 function App() {
 
+  const [isvisible, setIsVisible] = useState(false);
+
   return (
     <>
-      <h1>Hello</h1>
+      <button onClick={() => setIsVisible(!isvisible)}>Toggle</button>
+      {isvisible && <Ping />}
     </>
   )
 }
 
-export default App
+export default App;
